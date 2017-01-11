@@ -5,7 +5,9 @@ Localization is supported for Hindi and English using header value lang : hi for
 
 To run the project checkout from git .
 Goto to springboot-turorial and in cmd run below commands 
+
 1) mvn clean package
+
 2) java -jar target\springboot-1.jar
 
 

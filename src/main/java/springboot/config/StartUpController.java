@@ -11,11 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import springboot.servcie.GreetingController;
-
 @Controller
 @EnableAutoConfiguration
-@ComponentScan(basePackageClasses = GreetingController.class)
+@ComponentScan(basePackages="springboot.servcie")
 public class StartUpController {
 
 	@RequestMapping("/")

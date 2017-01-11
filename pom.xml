@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>springboot</groupId>
-	<artifactId>demo</artifactId>
-	<version>1</version>
+	<artifactId>tutorial</artifactId>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>demo</name>
+	<name>springboot</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -30,7 +30,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<artifactId>spring-boot-starter-tomcat</artifactId> 
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>

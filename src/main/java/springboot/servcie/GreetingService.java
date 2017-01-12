@@ -29,11 +29,6 @@ public class GreetingService {
 		setBundle();
 	}
 
-	public Greeting greet(String name) {
-		String template = bundle.getString("greeting_template");
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
-
-	}
 
 	public void setLocale(Locale locale) {
 		this.locale = locale;
@@ -48,7 +43,15 @@ public class GreetingService {
 		bundle = ResourceBundle.getBundle("MessageBundle", this.locale);
 	}
  
+	
 	public String askName() {
 		return bundle.getString("askName");
+	}
+	
+	
+	public Greeting greet(String name) {
+		String template = bundle.getString("greeting_template");
+		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+
 	}
 }

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ravikant.sharma 10-Jan-2017
  */
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/gc")
 public class GreetingController {
 
 	@Autowired

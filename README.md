@@ -13,6 +13,6 @@ Goto to springboot-turorial and in cmd run below commands
 2) java -jar target\springboot-*.jar
 
 
-You can take stable chekcout from release tab
+You can take stable chekcout from release tab along with features you wish to checkout.
 
 

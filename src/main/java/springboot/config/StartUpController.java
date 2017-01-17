@@ -1,10 +1,5 @@
 package springboot.config;
 
-import javax.annotation.PostConstruct;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger; 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  
 @Controller
 @EnableAutoConfiguration
-@ComponentScan(basePackages="springboot.servcie,springboot.dao,")
+@ComponentScan(basePackages="springboot.servcie,springboot.dao,springboot.rest")
 public class StartUpController {
 
 	@RequestMapping("/")

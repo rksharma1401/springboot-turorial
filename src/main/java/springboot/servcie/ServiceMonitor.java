@@ -20,15 +20,15 @@ import org.springframework.stereotype.Component;
 public class ServiceMonitor {
  private static final Logger logger = LogManager.getLogger(ServiceMonitor.class);
 	
- 	@AfterReturning("execution(* springboot.servcie..*.*(..))")
+ 	@AfterReturning("execution(* springboot.rest..*.*(..))")
 	public void logServiceAccessAfter(JoinPoint joinPoint) {
 		logger.debug("Completed: " + joinPoint);
 //		System.out.println("Completed: " + joinPoint);
 	}
  	
- 	@Before("execution(* springboot.servcie..*.*(..))")
+ 	@Before("execution(* springboot.rest..*.*(..))")
 	public void logServiceAccessBefore(JoinPoint joinPoint) {
-		logger.info("started: " + joinPoint);
+		logger.debug("started: " + joinPoint);
 //		System.out.println("stated: " + joinPoint);
 	}
 

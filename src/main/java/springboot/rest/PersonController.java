@@ -1,12 +1,10 @@
 /**
  * 
  */
-package springboot.servcie;
+package springboot.rest;
 
 import java.util.List;
 import java.util.Locale;
-
-import javax.annotation.PostConstruct;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -31,7 +29,7 @@ public class PersonController {
 	@Autowired
 	PersonService personService;
 
-	@RequestMapping(value = "/addPerson", method = RequestMethod.GET)
+	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
 	public Boolean add(@RequestParam(value = "fname") String fname, @RequestParam(value = "lname") String lname,
 			@RequestParam(value = "age") int age, @RequestParam(value = "place") String place,
 			@RequestHeader(value = "lang", required = false) Locale locale) {

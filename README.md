@@ -20,3 +20,6 @@ You can take stable chekcout from release tab along with features you wish to ch
 * Basic auth added using Spring security 
 
  
+ 
+ 
+ ** You can always refer to http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/ for reference.

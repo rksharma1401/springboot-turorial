@@ -47,7 +47,8 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
+      		<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -75,11 +76,11 @@
 	<!-- Package as an executable jar -->
 	<build>
 		<finalName>${project.groupId}</finalName>
-		<plugins>
+		<!-- <plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		</plugins>
+		</plugins> -->
 	</build>
 </project> 

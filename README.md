@@ -18,7 +18,7 @@ You can take stable chekcout from release tab along with features you wish to ch
 * Spring Rest Web service with Spring AOP
 * Spring Rest Web service with HSQL DB
 * Basic auth added using Spring security 
-
+* Create deployable war file
  
  
  

@@ -3,13 +3,15 @@ package springboot.config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
  
 @Controller
+@EnableScheduling
 @EnableAutoConfiguration
-@ComponentScan(basePackages="springboot.servcie,springboot.dao,springboot.rest")
+@ComponentScan(basePackages="springboot.servcie,springboot.dao,springboot.rest,springboot.schedule")
 public class StartUpController {
 
 	@RequestMapping("/")

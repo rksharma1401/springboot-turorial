@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @EnableScheduling
 @EnableAutoConfiguration
-@ComponentScan(basePackages="springboot.servcie,springboot.dao,springboot.rest,springboot.schedule")
+@ComponentScan(basePackages="springboot.service,springboot.dao,springboot.rest,springboot.schedule")
 public class StartUpController {
 
 	@RequestMapping("/")

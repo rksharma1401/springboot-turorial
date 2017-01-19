@@ -1,4 +1,4 @@
-package springboot.servcie;
+package springboot.service;
 
 public class Greeting {
 

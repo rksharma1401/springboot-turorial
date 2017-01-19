@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import springboot.servcie.Greeting;
-import springboot.servcie.GreetingService;
+import springboot.service.Greeting;
+import springboot.service.GreetingService;
 
 /**
  * @author ravikant.sharma 10-Jan-2017

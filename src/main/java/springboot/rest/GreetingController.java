@@ -25,7 +25,7 @@ public class GreetingController {
 	@Autowired
 	GreetingService greetingService;
  
-	@RequestMapping(value="/")
+	@RequestMapping(value="/",method = RequestMethod.GET)
 	public String info(){
 		return "This is rest service using spring boot";
 	}

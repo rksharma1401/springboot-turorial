@@ -44,7 +44,7 @@ public class ScheduledTasks {
 		log.info("The time is now " + dateFormat.format(new Date()));
 	}
 
-	@Scheduled(fixedRate = 5000)
+	@Scheduled(fixedRate = 50000)
 	public void testContext() {
 		Person p = (Person) context.getBean("MyBean");
 		log.info("Person from context : " + p);

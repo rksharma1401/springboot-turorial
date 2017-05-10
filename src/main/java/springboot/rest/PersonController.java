@@ -61,4 +61,11 @@ public class PersonController {
 		List<Person> lstperson=personService.getPersonByName(fname, lname);
 		return lstperson ;
 	}
+	
+	@RequestMapping(value = "/getAllPersons", method = RequestMethod.GET)
+	public List<Person> getAllPersons(@RequestHeader(value = "lang", required = false) Locale locale) {
+		
+		List<Person> lstperson=personService.getAllPerson();
+		return lstperson ;
+	}
 }

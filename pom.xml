@@ -5,7 +5,7 @@
 	<groupId>springboot</groupId>
 	<artifactId>tutorial</artifactId>
 	<version>1.2</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>springboot</name>
 	<url>http://maven.apache.org</url>

@@ -17,6 +17,6 @@ public class JSPController {
 		model.addAttribute("view", msg);
 
 		System.out.println(model.toString() + " from rootcontext");
-		return "msg";
+		return msg;
 	}
 }

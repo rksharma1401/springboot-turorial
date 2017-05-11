@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableScheduling
 @EnableAutoConfiguration
 @EnableWebMvc
-@ComponentScan(basePackages = "springboot.service,springboot.dao,springboot.rest,springboot.schedule,springboot.controller")
+@ComponentScan(basePackages = "springboot.service,springboot.dao,springboot.rest,springboot.schedule")
 public class StartUpController {
 
 	public static void main(String[] args) throws Exception {

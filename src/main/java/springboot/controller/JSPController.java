@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class JSPController {
-
+ 
 	@RequestMapping(value = "/j/{param : .+}", method = RequestMethod.GET)
 	public String rootContext(Model model, @PathParam("param") String msg) {
 		System.out.println(msg);

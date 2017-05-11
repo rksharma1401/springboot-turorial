@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ComponentScan(basePackages="springboot.service,springboot.dao,springboot.rest,springboot.schedule")
 public class StartUpController {
 
-	@RequestMapping("/")
+	@RequestMapping("/home")
 	@ResponseBody
 	String home() {
 		return "Hello World! -:)";

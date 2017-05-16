@@ -8,22 +8,23 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-@EnableScheduling
-@EnableAutoConfiguration
+
+@EnableScheduling 
 @SpringBootApplication
-@Controller
-@ComponentScan(basePackages = "springboot.service,springboot.dao,springboot.rest,springboot.schedule,springboot.controller")
+@EnableAutoConfiguration
+//@Controller
+@ComponentScan(basePackages = "springboot.service,springboot.dao,springboot.rest,springboot.schedule")
 public class StartUpController {
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(StartUpController.class, args);
 	}
 
-	@RequestMapping("/")
-	@ResponseBody
-	String home() {
-		return "Hello World!";
-	}
+//	@RequestMapping("/")
+//	@ResponseBody
+//	String home() {
+//		return "Hello World!";
+//	}
 
 	/*
 	 * @PostConstruct public void startDBManager() {

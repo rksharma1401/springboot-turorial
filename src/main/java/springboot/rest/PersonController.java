@@ -9,6 +9,8 @@ import java.util.Locale;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,10 +27,27 @@ import springboot.model.Person;
 @RequestMapping("/pc")
 public class PersonController {
 	private final Logger logger = LogManager.getLogger(PersonController.class);
-
+	private org.springframework.context.support.ReloadableResourceBundleMessageSource messageSource;
 	@Autowired
 	PersonService personService;
+	
+	
 
+	public PersonController() {
+		String[] springConfig = { "classpath:" + "/spring/context.xml" };
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(springConfig);
+		messageSource =  (ReloadableResourceBundleMessageSource) context.getBean("messageSource");
+	}
+	 
+	
+	@RequestMapping(value = "/messageSource", method = RequestMethod.GET)
+	public String getMessageSource(@RequestHeader(value = "lang", required = false) Locale locale) {
+		
+		   Object[] args = new Object[]{"askName"};
+		String m=messageSource.getMessage("askName", args, locale);
+		return m ;
+	}
+	
 	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
 	public Boolean add(@RequestParam(value = "fname") String fname, @RequestParam(value = "lname") String lname,
 			@RequestParam(value = "age") int age, @RequestParam(value = "place") String place,

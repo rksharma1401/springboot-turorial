@@ -11,8 +11,10 @@ import javax.annotation.PreDestroy;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +24,7 @@ import springboot.model.Person;
  * @author ravikant.sharma 17-Jan-2017
  */
 @Component
+@EnableScheduling
 public class ScheduledTasks {
 
 	private static final Logger log = LogManager.getLogger(ScheduledTasks.class);
@@ -44,13 +47,14 @@ public class ScheduledTasks {
 		log.info("The time is now " + dateFormat.format(new Date()));
 	}
 
-	@Scheduled(fixedRate = 9000000)
+	@Scheduled(fixedDelayString = "100000")
 	public void testContext() {
 		Person p = (Person) context.getBean("MyBean");
-		log.info("Person from context : " + p);
+		log.info("Person from context : " + p );
 
 	}
-
+	 
+	
 	@PreDestroy
 	public void clear() {
 		if(context!=null && context.isActive()){

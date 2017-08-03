@@ -27,7 +27,6 @@ public class Person {
 	    return place;
 	  }
 	  public void setPlace(String place) {
-		  System.out.println("------------------- place ---------------------" + place);
 	    this.place = place;
 	  }
 

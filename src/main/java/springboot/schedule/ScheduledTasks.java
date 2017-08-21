@@ -12,12 +12,14 @@ import javax.annotation.PreDestroy;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import springboot.config.StartUpController;
 import springboot.model.Person;
 
 /**
@@ -29,13 +31,12 @@ public class ScheduledTasks {
 
 	private static final Logger log = LogManager.getLogger(ScheduledTasks.class);
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-	private static ConfigurableApplicationContext context = null;
+	private static ApplicationContext context = null;
 
 	@PostConstruct
 	public void setUp() {
-		log.info("Going to create context");
-		String[] springConfig = { "classpath:" + "/spring/context.xml" };
-		context = new ClassPathXmlApplicationContext(springConfig);
+		log.info("Going to assign context"); 
+		context = StartUpController.context;
 	}
 
 	/*
@@ -56,10 +57,5 @@ public class ScheduledTasks {
 	 
 	
 	@PreDestroy
-	public void clear() {
-		if(context!=null && context.isActive()){
-			log.info("Going to close context");
-			context.close();
-		}
-	}
+	public void clear() { }
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import springboot.config.StartUpController;
 import springboot.dao.PersonService;
 import springboot.model.Person;
 
@@ -33,9 +34,8 @@ public class PersonController {
 	
 	
 
-	public PersonController() {
-		String[] springConfig = { "classpath:" + "/spring/context.xml" };
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(springConfig);
+	public PersonController() { 
+		ClassPathXmlApplicationContext context = (ClassPathXmlApplicationContext) StartUpController.context;
 		messageSource =  (ReloadableResourceBundleMessageSource) context.getBean("messageSource");
 	}
 	 

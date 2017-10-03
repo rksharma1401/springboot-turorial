@@ -18,7 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableAutoConfiguration
 @EnableAsync
 // @Controller
-@ComponentScan(basePackages = "springboot.service,springboot.dao,springboot.rest,springboot.schedule")
+@ComponentScan(basePackages = "springboot.service,springboot.dao,springboot.rest,springboot.schedule,springboot.microservices")
 public class StartUpController {
 
 	private static String[] springConfig = { "classpath:" + "/spring/context.xml" };

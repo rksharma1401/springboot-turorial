@@ -56,8 +56,7 @@ public class HelperService {
 		 Map<String, Object> map = new HashMap<String, Object>();
 		 map.put("id", 1);
 		 map.put("result", "OK");
-		 map.put("subMap", subMap);
-	        ObjectMapper mapper = new ObjectMapper();			 
+		 map.put("subMap", subMap);  
 		return map;
 		
 		

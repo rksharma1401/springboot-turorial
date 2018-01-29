@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import springboot.config.StartUpController;
 import springboot.dao.PersonService;
 import springboot.model.Person;
+import springboot.model.User;
+import springboot.service.UserLoginService;
 
 /**
  * @author ravikant.sharma 12-Jan-2017
@@ -86,5 +88,11 @@ public class PersonController {
 		
 		List<Person> lstperson=personService.getAllPerson();
 		return lstperson ;
+	}
+ 
+	@RequestMapping(value = "/createUser", method = RequestMethod.POST , consumes="application/json" ,produces="application/json" )
+	public User createUser(User u) {
+		u=UserLoginService.createUser(u);
+		return u;
 	}
 }

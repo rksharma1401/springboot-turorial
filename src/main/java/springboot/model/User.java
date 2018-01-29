@@ -25,7 +25,7 @@ public class User implements Serializable{
 	private static final long serialVersionUID = 3479690702597127117L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id", nullable=false, unique=true, length=11)
 	private int id;
 	@Column(name="NAME", length=25, nullable=true)

@@ -6,13 +6,13 @@
 	<session-factory>
 		<property name="dialect">org.hsqldb.jdbcDriver</property>
 		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
-		<property name="connection.url">jdbc:mysql://mysql:3306/sampledb</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/sampledb</property>
 		<property name="connection.username">userJ8Y</property>
 		<property name="connection.password">UDmXXpYKoDSGcWfO</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="javax.persistence.validation.mode">none</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<!-- Mapping with model class containing annotations -->
-		<mapping class="com.study.vo.User" />
+		<mapping class="springboot.model.User" />
 	</session-factory>
 </hibernate-configuration>

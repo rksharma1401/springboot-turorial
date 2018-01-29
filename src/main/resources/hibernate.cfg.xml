@@ -4,8 +4,8 @@
 		"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-		<property name="dialect">org.hsqldb.jdbcDriver</property>
-		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/sampledb</property>
 		<property name="connection.username">userJ8Y</property>
 		<property name="connection.password">UDmXXpYKoDSGcWfO</property>

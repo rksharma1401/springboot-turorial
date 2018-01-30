@@ -6,7 +6,7 @@
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://172.30.216.116:3306/learn</property>
+		<property name="connection.url">jdbc:mysql://172.30.224.225:3306/sampledb</property>
 		<property name="connection.username">dbuser</property>
 		<property name="connection.password">dbuser</property>
 		<property name="hibernate.current_session_context_class">thread</property>

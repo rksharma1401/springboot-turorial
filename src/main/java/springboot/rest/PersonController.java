@@ -91,8 +91,12 @@ public class PersonController {
 	}
  
 	@RequestMapping(value = "/createUser", method = RequestMethod.POST , consumes="application/json" ,produces="application/json" )
-	public User createUser(User u) {
+	public User createUser(User u) throws Exception {
+		try {
 		u=UserLoginService.createUser(u);
+		}catch(Exception e) {
+			throw e;
+		}
 		return u;
 	}
 }

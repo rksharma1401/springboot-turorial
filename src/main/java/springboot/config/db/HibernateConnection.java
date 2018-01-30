@@ -10,7 +10,7 @@ import springboot.schedule.ScheduledTasks;
 
 public class HibernateConnection {
 	private static final Logger log = LogManager.getLogger(ScheduledTasks.class);
-
+	static Exception ex ;
 	static SessionFactory sessionFactory = null;
 	static {
 		try {
@@ -22,6 +22,7 @@ public class HibernateConnection {
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error("exception in creating sessionFactory " , e);
+			ex =e;
 		}
 
 	}
@@ -29,8 +30,12 @@ public class HibernateConnection {
 	public HibernateConnection() {
 	}
 
-	public static Session getSession() {
+	public static Session getSession() throws Exception {
+		try {
 		return sessionFactory.getCurrentSession();
+		}catch(Exception e) {
+			throw ex;
+		}
 	}
 
 }

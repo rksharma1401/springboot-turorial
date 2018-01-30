@@ -16,7 +16,7 @@ import springboot.model.User;
 public class UserLoginService {
 
 	
-	public static User createUser(User u){
+	public static User createUser(User u) throws Exception{
 		System.out.println("inside createUser");
 		 
 		Session session=HibernateConnection.getSession();
@@ -28,7 +28,7 @@ public class UserLoginService {
 		return u;
 	}
 	
-	public static boolean isValid(int id) throws InterruptedException {
+	public static boolean isValid(int id) throws Exception {
 		System.out.println("inside validation");
 		 
 		Session session=HibernateConnection.getSession();

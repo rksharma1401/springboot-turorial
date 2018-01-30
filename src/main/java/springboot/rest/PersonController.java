@@ -99,4 +99,14 @@ public class PersonController {
 		}
 		return u;
 	}
+	@RequestMapping(value = "/isValid", method = RequestMethod.GET  ,produces="application/json")
+	public User isValid(@RequestParam(value = "id") int id) throws Exception {
+		User validUser=null;
+		try {
+			validUser=UserLoginService.isValid(id);
+		}catch(Exception e) {
+			throw e;
+		}
+		return validUser;
+	}
 }

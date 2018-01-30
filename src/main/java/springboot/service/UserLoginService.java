@@ -28,17 +28,14 @@ public class UserLoginService {
 		return u;
 	}
 	
-	public static boolean isValid(int id) throws Exception {
+	public static User isValid(int id) throws Exception {
 		System.out.println("inside validation");
 		 
 		Session session=HibernateConnection.getSession();
 		Transaction tx=session.beginTransaction();
 		User user=(User) session.get(User.class, id);
-		tx.commit();
-		 if(user!=null){
-			 return true; 
-		 }
-		return false;
+		tx.commit(); 
+		return user;
 	}
 
 	 

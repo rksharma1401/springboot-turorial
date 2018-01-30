@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -91,7 +92,8 @@ public class PersonController {
 	}
  
 	@RequestMapping(value = "/createUser", method = RequestMethod.POST , consumes="application/json" ,produces="application/json" )
-	public User createUser(User u) throws Exception {
+	public User createUser(@RequestBody User u) throws Exception {
+		System.out.println(u.getCompany() + u.getName() + u.getPost() );
 		try {
 		u=UserLoginService.createUser(u);
 		}catch(Exception e) {

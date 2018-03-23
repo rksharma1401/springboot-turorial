@@ -13,12 +13,12 @@ To run the project checkout from git .
 
 #### You can take stable checkout from release tab along with features you wish to checkout.
 
-+ Spring Rest Web service with Spring AOP
-+ Spring Rest Web service with HSQL DB
-+ Basic auth added using Spring security 
-+ Create deployable war file
-+ Server basic HTML files 
-+ *mysql* db from openshit.io using hibernate 
+1. Spring Rest Web service with Spring AOP
+2. Spring Rest Web service with HSQL DB
+3. Basic auth added using Spring security 
+4. Create deployable war file
+5. Server basic HTML files 
+6. *mysql* db from openshit.io using hibernate 
  
  
  

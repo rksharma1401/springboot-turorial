@@ -1,0 +1,11 @@
+curl -X GET \
+  http://springboot-rks.apps.ca-central-1.starter.openshift-online.com/user/createUserGet \
+  -H 'authorization: Basic dXNlcjpwYXNzd29yZA==' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 23db3776-9467-26a9-5659-7f4a8a4fbf1c' \
+  -d '{ 
+  "name": "avi",
+  "company": "BabyCorp" ,
+  "post":"Agent" 
+}'

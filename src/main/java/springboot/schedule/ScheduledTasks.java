@@ -61,10 +61,12 @@ public class ScheduledTasks {
 	
 	@Scheduled(fixedDelayString = "100000")
 	public void testDB() throws Exception{
+		System.out.println("Query is going to execute");
 		Session session=HibernateConnection.getSession();
 		Transaction tx=session.beginTransaction();
 		SQLQuery  query = session.createSQLQuery("select sysdate() from dual");
 		query.list();
+		System.out.println("Query Executed");
 		tx.commit();  
 
 	}

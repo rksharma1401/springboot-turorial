@@ -20,8 +20,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RequestMapping("/us")
 public class HelperService {
 
-	@Value("${basic.authorization}")
-    private String personalToken ;
+	//@Value("${basic.authorization}")
+    private String personalToken ="Basic dXNlcjpwYXNzd29yZA==";
 	
 	
 	@Value("${host.name}")

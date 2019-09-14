@@ -21,6 +21,11 @@ import org.springframework.stereotype.Component;
 
 import springboot.config.StartUpController;
 import springboot.model.Person;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import springboot.config.db.HibernateConnection;
 
 /**
  * @author ravikant.sharma 17-Jan-2017
@@ -46,16 +51,24 @@ public class ScheduledTasks {
 	@Scheduled(fixedRate = 5000)
 	public void reportCurrentTime() {
 		log.info("The time is now " + dateFormat.format(new Date()));
-	}
-
-	@Scheduled(fixedDelayString = "100000")
-	public void testContext() {
 		Person p = (Person) context.getBean("MyBean");
 		log.info("Person from context : " + p );
 
 	}
+
+ 
 	 
 	
+	@Scheduled(fixedDelayString = "100000")
+	public void testDB() throws Exception{
+		Session session=HibernateConnection.getSession();
+		Transaction tx=session.beginTransaction();
+		SQLQuery  query = session.createSQLQuery("select sysdate() from dual");
+		query.list();
+		tx.commit();  
+
+	}
+
 	@PreDestroy
 	public void clear() { }
 }

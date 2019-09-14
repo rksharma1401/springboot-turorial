@@ -31,6 +31,16 @@ public class UserController {
 	
 
 
+@RequestMapping(value = "/createUserGet", method = RequestMethod.GET , consumes="application/json" ,produces="application/json" )
+	public User createUserGet(@RequestBody User u) throws Exception {
+		System.out.println(u.getCompany() + u.getName() + u.getPost() );
+		try {
+		u=UserLoginService.createUser(u);
+		}catch(Exception e) {
+			throw e;
+		}
+		return u;
+	}
 
 @RequestMapping(value = "/createUser", method = RequestMethod.POST , consumes="application/json" ,produces="application/json" )
 	public User createUser(@RequestBody User u) throws Exception {

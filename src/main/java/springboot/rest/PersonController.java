@@ -74,7 +74,29 @@ public class PersonController {
 		
 		return isAdded;
 	}
+	@RequestMapping(value = "/addPersonGet", method = RequestMethod.GET)
+	public Boolean addGet(@RequestParam(value = "fname") String fname, @RequestParam(value = "lname") String lname,
+			@RequestParam(value = "age") int age, @RequestParam(value = "place") String place,
+			@RequestHeader(value = "lang", required = false) Locale locale) {
+		
+		Boolean isAdded=false;
+		
+		Person person = new Person();
+		person.setFirstName(fname);
+		person.setLastName(lname);
+		person.setAge(age);
+		person.setPlace(place);
+		
+		if (personService.addPerson(person) > 0) {
+			isAdded=true;
+			logger.info("Person saved successfully");
+		}else{
+			isAdded=false;
+		}
 
+		
+		return isAdded;
+	}
 	@RequestMapping(value = "/getPersonByName", method = RequestMethod.GET)
 	public List<Person> getPersonByName(@RequestParam(value = "fname") String fname,
 			@RequestParam(value = "lname") String lname,

@@ -9,3 +9,8 @@ curl -X GET \
   "company": "BabyCorp" ,
   "post":"Agent" 
 }'
+
+curl -X GET  http://springboot-rks.apps.ca-central-1.starter.openshift-online.com/user/isValid?id=2 -H 'authorization: Basic dXNlcjpwYXNzd29yZA==' 
+
+seq 1 200 | xargs -n1 -P10 curl  -X  GET -H 'authorization: Basic dXNlcjpwYXNzd29yZA=='   http://springboot-rks.apps.
+ca-central-1.starter.openshift-online.com/user/isValid?id=1 >a.txt 2>1 &

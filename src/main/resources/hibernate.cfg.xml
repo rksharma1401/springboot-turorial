@@ -6,13 +6,13 @@
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/bau</property>
-		<property name="connection.username">${MYSQL_USER}</property>
-		<property name="connection.password">${MYSQL_PASSWORD}</property>
+		<property name="connection.url">jdbc:mysql://172.30.134.31:3306/bau</property>
+		<property name="connection.username">mysql</property>
+		<property name="connection.password">mysql</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="javax.persistence.validation.mode">none</property>
 		<property name="hibernate.hbm2ddl.auto">create</property>
-		 <property name="connection.pool_size">10</property>
+		<property name="connection.pool_size">10</property>
 		<!-- Mapping with model class containing annotations -->
 		<mapping class="springboot.model.User" />
 	</session-factory>

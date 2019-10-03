@@ -25,3 +25,5 @@ To run the project checkout from git .
  ** You can always refer to http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/ for reference.
 
 openshift.io
+
+URL http://springboot-rks.apps.ca-central-1.starter.openshift-online.com/

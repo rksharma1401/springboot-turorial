@@ -11,7 +11,7 @@
 		<property name="connection.password">mysql</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="javax.persistence.validation.mode">none</property>
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="connection.pool_size">10</property>
 		<!-- Mapping with model class containing annotations -->
 		<mapping class="springboot.model.User" />

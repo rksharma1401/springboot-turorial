@@ -62,5 +62,16 @@ public class UserController {
 		}
 		return validUser;
 	}
+	
+	@RequestMapping(value = "/getAllUsers", method = RequestMethod.GET  ,produces="application/json")
+	public List<User> getAllUsers(@RequestParam(value = "id") int id) throws Exception {
+		List<User> users=null;
+		try {
+			users=UserLoginService.getAllUser();
+		}catch(Exception e) {
+			throw e;
+		}
+		return users;
+	}
 
 }

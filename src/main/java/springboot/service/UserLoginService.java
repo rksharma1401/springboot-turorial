@@ -3,6 +3,9 @@
  */
 package springboot.service;
 
+import java.util.List;
+
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -36,6 +39,17 @@ public class UserLoginService {
 		User user=(User) session.get(User.class, id);
 		tx.commit(); 
 		return user;
+	}
+	
+	public static List<User> getAllUser() throws Exception {
+		System.out.println("inside getAllUser");
+		 
+		Session session=HibernateConnection.getSession();
+		Transaction tx=session.beginTransaction();
+		Criteria criteria = session.createCriteria(User.class);
+		List<User> users = criteria.list();
+		tx.commit(); 
+		return users;
 	}
 
 	 

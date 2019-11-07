@@ -19,6 +19,7 @@ To run the project checkout from git .
 4. Create deployable war file
 5. Server basic HTML files 
 6. *mysql* db from openshit.io using hibernate 
+7. Added api for User who use mysql db in openshift
  
  
  

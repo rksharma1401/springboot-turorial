@@ -64,7 +64,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/getAllUsers", method = RequestMethod.GET  ,produces="application/json")
-	public List<User> getAllUsers(@RequestParam(value = "id") int id) throws Exception {
+	public List<User> getAllUsers() throws Exception {
 		List<User> users=null;
 		try {
 			users=UserLoginService.getAllUser();

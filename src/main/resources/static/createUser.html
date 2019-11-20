@@ -11,17 +11,20 @@
 </head>
   <script>
     $(document).ready(function(){
-  $("#send").click(function(){
-  alert("Data: " + $("#name").val() + "\nStatus: ");
-    $.post("/user/createUser",
-    {
-      name: $("#name").val(),
-      company: $("#company").val(),
-      post: $("#post").val()
-    },
-    function(data,status){
-      alert("Data: " + data + "\nStatus: " + status);
-    });
+  $("#send").click(function(){ 
+var userData={"name":$("#name").val(),"company": $("#company").val() ,"post":$("#post").val()};
+ $.ajax({
+  type: "POST",
+  url: "/user/createUser",
+  contentType:"application/json",
+  data: JSON.stringify(userData),
+  success:  function(result){
+      alert("Data: " + JSON.stringify(result));
+   	},
+  error: function(xhr){
+      alert("An error occured: " + xhr.status + " " + xhr.statusText);
+    } 
+});  
   });
 });
   </script>

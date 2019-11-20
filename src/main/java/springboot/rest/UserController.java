@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import springboot.config.StartUpController;
 import springboot.dao.PersonService;
@@ -24,6 +25,7 @@ import springboot.service.UserLoginService;
 /**
  * @author ravikant.sharma 20-09-2019
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {

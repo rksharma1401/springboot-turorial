@@ -107,12 +107,7 @@
 </dependency>
 
 
-		<!-- Test start -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		<!-- Test start --> 
 
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -134,18 +129,7 @@
 			</plugin>
 		
       <plugin>
-        <groupId>io.fabric8</groupId>
-        <artifactId>fabric8-maven-plugin</artifactId>
-        <version>3.5.28</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>resource</goal>
-              <goal>build</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+        
     </plugins>
 	</build>
 

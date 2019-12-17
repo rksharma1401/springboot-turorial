@@ -4,7 +4,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 import springboot.schedule.ScheduledTasks;
 
@@ -14,7 +14,7 @@ public class HibernateConnection {
 	static SessionFactory sessionFactory = null;
 	static {
 		try {
-			AnnotationConfiguration configuration = new AnnotationConfiguration();
+			Configuration configuration = new Configuration();
 			configuration.configure("hibernate.cfg.xml");
 			log.error("Hibernate Configuration created successfully");
 			sessionFactory = configuration.buildSessionFactory();

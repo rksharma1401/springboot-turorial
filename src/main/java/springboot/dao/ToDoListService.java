@@ -28,6 +28,20 @@ public class ToDoListService {
 		return result;
 
 	}
+	
+	public int deleteTask(String toDoTask) {
+		String sql = "delete from  todo_list where todo_task = ?";
+		int result = 1;
+		 
+		try {
+			result = jdbcTemplate.update(sql,toDoTask);
+		} catch (org.springframework.dao.DuplicateKeyException ex) {
+			result = -1;
+		}
+
+		return result;
+
+	}
 
 	public List<String> getAllTask() {
 		return jdbcTemplate.query("SELECT todo_task FROM todo_list", new RowMapper<String>() {

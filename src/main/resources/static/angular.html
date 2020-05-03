@@ -14,41 +14,62 @@
 		app
 				.controller(
 						"myCtrl",
-						function($scope,$http) {
+						function($scope, $http) {
 							$scope.products = [ "Milk", "Bread", "Cheese" ];
-							 $http.get("/todo/getAllTask")
-							  .then(function(response) {
-							      $scope.products = response.data;
-							  });
-							 
+							$http.get("/todo/getAllTask").then(
+									function(response) {
+										$scope.products = response.data;
+									});
+
 							$scope.addItem = function() {
 								$scope.errortext = "";
 								if (!$scope.addMe) {
 									return;
 								}
 								if ($scope.products.indexOf($scope.addMe) == -1) {
-									$scope.products.push($scope.addMe);
-									console.log($scope.addMe);
+
 									$http({
-									    method: 'POST',
-									    url: '/todo/createTask',
-									    data: $scope.addMe
-									}).then(function successCallback(response) {
-									    console.log(response);  
-									    if( response.data=='true')
-									    	$scope.successtext ="saved to DB";
-									    else
-									    	$scope.errortext ="error in saving in db ";
-									}, function errorCallback(response) {
-										$scope.errortext ="error in saving in db ";
-									});
+										method : 'POST',
+										url : '/todo/createTask',
+										data : $scope.addMe
+									})
+											.then(
+													function successCallback(
+															response) {
+														console.log(response);
+														$scope.successtext = "saved to DB";
+														$scope.products
+																.push($scope.addMe);
+
+													},
+													function errorCallback(
+															response) {
+														$scope.errortext = "error in saving in db ";
+													});
 								} else {
 									$scope.errortext = "The item is already in your shopping list.";
 								}
 							}
 							$scope.removeItem = function(x) {
 								$scope.errortext = "";
-								$scope.products.splice(x, 1);
+
+								$http({
+									method : 'POST',
+									url : '/todo/deleteTask',
+									data : $scope.addMe
+								})
+										.then(
+												function successCallback(
+														response) {
+													console.log(response);
+													$scope.successtext = "Deleted";
+													$scope.products
+															.splice(x, 1);
+
+												},
+												function errorCallback(response) {
+													$scope.errortext = "error in Delete in db ";
+												});
 							}
 						});
 	</script>

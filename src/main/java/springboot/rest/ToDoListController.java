@@ -33,6 +33,21 @@ public class ToDoListController {
 		}
 		return false;
 	}
+	
+	@RequestMapping(value = "/deleteTask", method = RequestMethod.POST)
+	public boolean deleteTask(@RequestBody String task) throws Exception {
+		System.out.println(task);
+		logger.error(task);
+		try {
+			int result = toDoListService.deleteTask(task);
+			if (result > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+		return false;
+	}
 
 	@RequestMapping(value = "/getAllTask", method = RequestMethod.GET)
 	public List<String> createTask() throws Exception {

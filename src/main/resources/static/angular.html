@@ -16,6 +16,11 @@
 						"myCtrl",
 						function($scope,$http) {
 							$scope.products = [ "Milk", "Bread", "Cheese" ];
+							 $http.get("/todo/getAllTask")
+							  .then(function(response) {
+							      $scope.products = response.data;
+							  });
+							 
 							$scope.addItem = function() {
 								$scope.errortext = "";
 								if (!$scope.addMe) {

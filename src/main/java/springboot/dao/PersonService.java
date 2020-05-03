@@ -68,4 +68,32 @@ public class PersonService {
 
 	    });
 	  }
+  
+  public int addTask(String toDoTask) {
+		String sql = "INSERT INTO person(todo_task) VALUES(?)";
+		int result = 1;
+		if(jdbcTemplate==null) {
+			System.out.println("jdbcTemplate is null  ??????????????????????????????????????????");
+		}
+		try {
+			result = jdbcTemplate.update(sql,toDoTask);
+		} catch (org.springframework.dao.DuplicateKeyException ex) {
+			result = -1;
+		}
+
+		return result;
+
+	}
+
+	public List<String> getAllTask() {
+		return jdbcTemplate.query("SELECT todo_task FROM todo_list", new RowMapper<String>() {
+
+			public String mapRow(ResultSet rs, int arg1) throws SQLException {
+			 
+				String s=rs.getString("todo_task");
+				return s;
+			}
+
+		});
+	}
 }

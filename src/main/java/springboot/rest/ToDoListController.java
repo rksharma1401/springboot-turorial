@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import springboot.dao.ToDoListService;
+import springboot.dao.PersonService;
 
 @CrossOrigin
 @RestController
@@ -17,11 +17,11 @@ public class ToDoListController {
 	private final Logger logger = LogManager.getLogger(ToDoListController.class);
 	
 	@RequestMapping(value = "/createTask", method = RequestMethod.POST , consumes="application/json" ,produces="application/json" )
-	public boolean createUser(@RequestBody String  task) throws Exception {
+	public boolean createTask(@RequestBody String  task) throws Exception {
 		System.out.println(task);
 		logger.error(task);
 		try {
-			ToDoListService td=new ToDoListService();
+			PersonService td=new PersonService();
 			int result=td.addTask(task);
 			if(result>0) {
 				return true; 

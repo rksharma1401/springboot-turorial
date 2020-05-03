@@ -16,7 +16,7 @@ public class ToDoListService {
 	private JdbcTemplate jdbcTemplate;
 
 	public int addTask(String toDoTask) {
-		String sql = "INSERT INTO person(todo_task) VALUES(?)";
+		String sql = "INSERT INTO todo_list(todo_task) VALUES(?)";
 		int result = 1;
 		 
 		try {

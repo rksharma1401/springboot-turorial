@@ -2,15 +2,12 @@ package springboot.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
-
-import springboot.model.ToDoTask;
 
 @Service
 public class ToDoListService {
@@ -21,6 +18,9 @@ public class ToDoListService {
 	public int addTask(String toDoTask) {
 		String sql = "INSERT INTO person(todo_task) VALUES(?)";
 		int result = 1;
+		if(jdbcTemplate==null) {
+			System.out.println("jdbcTemplate is null  ??????????????????????????????????????????");
+		}
 		try {
 			result = jdbcTemplate.update(sql,toDoTask);
 		} catch (org.springframework.dao.DuplicateKeyException ex) {

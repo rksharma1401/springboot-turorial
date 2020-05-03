@@ -14,3 +14,6 @@ curl -X GET  http://springboot-rks.apps.ca-central-1.starter.openshift-online.co
 
 seq 1 200 | xargs -n1 -P10 curl  -X  GET -H 'authorization: Basic dXNlcjpwYXNzd29yZA=='   http://springboot-rks.apps.
 ca-central-1.starter.openshift-online.com/user/isValid?id=1 >a.txt 2>1 &
+
+
+https://springboothibernate.herokuapp.com/pc/addPersonGet?fname=avi&lname=sharma&age=1&place=Indore 
